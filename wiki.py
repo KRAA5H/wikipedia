@@ -27,11 +27,6 @@ class WikipediaSearch:
         self.DisplayContentOrSummary()
 
     def PageDetails(self):
-        self.title = ""
-        self.url = ""
-        self.content = ""
-        self.images = []
-        self.links = []
         while True:
             print()
             print("🔍 What would you like to see?")
@@ -43,16 +38,20 @@ class WikipediaSearch:
             choice = input("Enter your choice (1, 2, 3, or 4): ").strip()
             if choice == "1":
                 print(f"📄 Title: {self.ReturnTitle()}")
-                time.sleep(2)
+                print()
+                break
             elif choice == "2":
                 print(f"🌐 URL: {self.ReturnUrl()}")
-                time.sleep(2)
+                print()
+                break
             elif choice == "3":
                 print(self.ReturnImages())
-                time.sleep(2)
+                print()
+                break
             elif choice == "4":
                 print(self.ReturnLinks())
-                time.sleep(2)
+                print()
+                break
             else:
                 print("❌ Invalid choice. Please try again.")
 
@@ -70,14 +69,15 @@ class WikipediaSearch:
             print()
 
             choice = input("Enter your choice (1, 2, 3, 4, or Q): ").strip()
+            print()
             if choice == "1":
                 content = self.ReturnContent()
                 print(content)
-                time.sleep(20)
+                time.sleep(5)
             elif choice == "2":
                 summary = self.ReturnSummary()
                 print(summary)
-                time.sleep(15)
+                time.sleep(5)
             elif choice == "3":
                 self.PageDetails()
             elif choice == "4":
@@ -203,6 +203,7 @@ class WikipediaSearch:
     def RandomArticle(self):
         query = wikipedia.random(pages=1)
         self.SearchValues(query)
+        print(f"📄 Title: {self.ReturnTitle()}")
 
     def RetrieveUserQuery(self):
         query = input("🔍 What do you want to search for? (Q for exit) ").strip()
@@ -216,9 +217,9 @@ class WikipediaSearch:
 
     def Quit(self):
         print()
-        print("❌" * 10)
-        print("❌ Exiting. ❌")
-        print("❌" * 10)
+        print("❌" * 6)
+        print("❌ Exiting ❌")
+        print("❌" * 6)
         print()
         sys.exit(0)
 
