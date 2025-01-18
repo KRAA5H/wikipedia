@@ -1,5 +1,5 @@
 # wikipedia
-Python wikipedia terminal searcher. 
+Python wikipedia on cmd line. 
 
 Command line python intergace that uses the wikipedia API to search for a random query or a chosen query.
 
